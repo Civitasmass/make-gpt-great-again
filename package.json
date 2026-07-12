@@ -1,0 +1,43 @@
+{
+  "name": "make-gpt-great-again",
+  "version": "0.1.0",
+  "description": "Run OpenAI's GPT-5.6 family (Sol / Terra / Luna) inside Claude Code — an Anthropic-Messages-to-OpenAI-Responses proxy with the harness quirks fixed.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "mgga": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "launcher",
+    "scripts",
+    "README.md",
+    "ARCHITECTURE.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "doctor": "npm run -s build && node dist/index.js doctor",
+    "serve": "npm run -s build && node dist/index.js serve"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": [
+    "claude-code",
+    "gpt-5.6",
+    "anthropic",
+    "openai",
+    "responses-api",
+    "proxy"
+  ]
+}
